@@ -19,4 +19,5 @@ from mywebsite_backend import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('blog/', views.Blog.as_view()),
 ]

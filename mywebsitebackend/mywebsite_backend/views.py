@@ -1,9 +1,11 @@
 from django.shortcuts import render
+from rest_framework import generics
 from .models import BlogPost
+from .serializers import BlogPostSerializer
 
 # Create your views here.
 
 
-def blog():
-    blog_post = BlogPost.objects.all()
-    return render(request, 'home.html', {'blog_posts': blog_posts})
+class Blog(generics.ListAPIView):
+    serializer_class = BlogPostSerializer
+    blog = BlogPost.objects.all()

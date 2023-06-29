@@ -1,9 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+import axios from "axios";
 
 export default function Blog() {
-  function handlePost() {}
+  useEffect(() => {
+    axios
+      .get("http://127.0.0.1:8000/blog-post", {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  });
+
+  // function handlePost() {
+  //   axios.post("http://127.0.0.1:8000/blog-post", {
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     },
+  //   })
+  //   .then(((response) => {
+  //     console.log(response)
+  //   }));
+  // }
   return (
     <>
       <div>

@@ -6,10 +6,12 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import axios from "axios";
 import moment from "moment";
+import { useNavigate } from "react-router-dom";
 
 export default function Blog() {
   const [posts, setPosts] = useState([]);
   const [post, setPost] = useState({ body: "" });
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -49,7 +51,7 @@ export default function Blog() {
   if (posts) {
     return (
       <>
-        <div className=" my-10">
+        <div className=" my-8">
           <div className=" text-center text-6xl font-serif">Blog</div>
           <div className="flex flex-col text-center my-2 justify-center items-center h-screen">
             {posts.map((p, index) => (

@@ -9,6 +9,7 @@ import moment from "moment";
 
 export default function Blog() {
   const [posts, setPosts] = useState([]);
+  const [post, setPost] = useState({ body: "" });
 
   useEffect(() => {
     axios
@@ -26,24 +27,36 @@ export default function Blog() {
       });
   }, []);
 
-  // function handlePost() {
-  //   axios.post("http://127.0.0.1:8000/blog-post", {
-  //     headers: {
-  //       "Content-Type": "application/json"
-  //     },
-  //   })
-  //   .then(((response) => {
-  //     console.log(response)
-  //   }));
-  // }
+  function handlePost() {
+    axios
+      .post("http://127.0.0.1:8000/blog-post", post, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      })
+      .then((response) => {
+        console.log(response);
+        setPosts([...posts, response.data]);
+        setPost({ body: "" });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+
+  console.log(post);
 
   if (posts) {
     return (
       <>
-        <div>
+        <div className=" my-10">
           <div className="flex flex-col text-center my-2 justify-center items-center h-screen">
             {posts.map((p, index) => (
-              <Card key={index} className="my-2 w-4/6">
+              <Card
+                key={index}
+                className="my-4 w-4/6 shadow-md shadow-black"
+                variant="outlined"
+              >
                 <CardContent>
                   <div className=" text-sm">
                     {moment(p.created_at).format("MMMM Do, YYYY")}{" "}
@@ -54,9 +67,18 @@ export default function Blog() {
                 </CardContent>
               </Card>
             ))}
-            <TextField id="" multiline rows={8} className=" w-4/6"></TextField>
+            <TextField
+              id=""
+              multiline
+              rows={8}
+              className="w-4/6"
+              value={post.body}
+              onChange={(e) => setPost({ ...post, body: e.target.value })}
+            ></TextField>
             <div>
-              <Button variant="text">Post</Button>
+              <Button onClick={handlePost} variant="text">
+                Post
+              </Button>
             </div>
           </div>
         </div>

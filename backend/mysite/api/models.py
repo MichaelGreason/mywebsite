@@ -8,7 +8,3 @@ class BlogPost(models.Model):
     body = models.CharField(max_length=500, default='')
     created_at = models.DateField(auto_now_add=True)
     time_created = models.TimeField(auto_now_add=True)
-
-
-class MyImage(models.Model):
-    image = models.ImageField(upload_to='images/')

@@ -16,7 +16,13 @@ export default function Home() {
             site using the "Go To" menu at the top right, enjoy!
           </div>
         </div>
-        <div>{images && <img src={images} alt="image" />}</div>
+        <div className=" w-2/5 ml-96 ">
+          <img
+            src="/src/assets/images/headshot 4.jpeg"
+            className=" rounded-full"
+            alt="image"
+          />
+        </div>
       </div>
     </>
   );

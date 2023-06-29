@@ -6,6 +6,4 @@ class BlogPostSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = BlogPost
-        fields = ('id', 'body', 'created_at')
-        
-        
+        fields = ('id', 'body', 'created_at', 'time_created')

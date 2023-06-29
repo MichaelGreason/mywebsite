@@ -50,6 +50,7 @@ export default function Blog() {
     return (
       <>
         <div className=" my-10">
+          <div className=" text-center text-6xl font-serif">Blog</div>
           <div className="flex flex-col text-center my-2 justify-center items-center h-screen">
             {posts.map((p, index) => (
               <Card

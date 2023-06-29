@@ -1,11 +1,14 @@
 import { useState } from "react";
-import "./App.css";
-import Home from "./pages/home";
+import "./styles/App.css";
+import Blog from "./pages/blog";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Home />
+      <Routes>
+        <Route path="/blog" element={<Blog />} />
+      </Routes>
     </>
   );
 }

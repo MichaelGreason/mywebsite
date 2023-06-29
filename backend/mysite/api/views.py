@@ -6,6 +6,6 @@ from .models import BlogPost
 # Create your views here.
 
 
-class BlogPostView(generics.CreateAPIView):
+class BlogPostView(generics.ListCreateAPIView):
     queryset = BlogPost.objects.all()
     serializer_class = BlogPostSerializer

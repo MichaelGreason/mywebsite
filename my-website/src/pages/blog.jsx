@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import axios from "axios";
+import moment from "moment";
 
 export default function Blog() {
   const [posts, setPosts] = useState([]);
@@ -45,8 +46,9 @@ export default function Blog() {
               <Card key={index} className="my-2 w-4/6">
                 <CardContent>
                   <div className=" text-sm">
-                    {p.created_at}
-                    {p.time_created}
+                    {moment(p.created_at).format("MMMM Do, YYYY")}{" "}
+                    <span> - </span>
+                    {moment(p.time_created, "HH:mm").format("h:mm A")}{" "}
                   </div>
                   <div>{p.body}</div>
                 </CardContent>

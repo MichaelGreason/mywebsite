@@ -49,6 +49,7 @@ export default function Header() {
             <MenuItem disableRipple onClick={goBlog}>
               Blog
             </MenuItem>
+            <MenuItem disableRipple>Projects</MenuItem>
             <MenuItem disableRipple>Music</MenuItem>
             <MenuItem disableRipple>Resume</MenuItem>
             <MenuItem disableRipple>Contact</MenuItem>

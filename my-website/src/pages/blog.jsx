@@ -55,7 +55,7 @@ export default function Blog() {
             {posts.map((p, index) => (
               <Card
                 key={index}
-                className="my-4 w-4/6 shadow-md shadow-black"
+                className="my-2 w-4/6 shadow-md shadow-black"
                 variant="outlined"
               >
                 <CardContent>
@@ -68,18 +68,20 @@ export default function Blog() {
                 </CardContent>
               </Card>
             ))}
-            <TextField
-              id=""
-              multiline
-              rows={8}
-              className="w-4/6"
-              value={post.body}
-              onChange={(e) => setPost({ ...post, body: e.target.value })}
-            ></TextField>
-            <div>
-              <Button onClick={handlePost} variant="text">
-                Post
-              </Button>
+            <div className="mt-20 w-8/12">
+              <TextField
+                id=""
+                multiline
+                rows={8}
+                className="w-4/6"
+                value={post.body}
+                onChange={(e) => setPost({ ...post, body: e.target.value })}
+              ></TextField>
+              <div>
+                <Button onClick={handlePost} variant="text">
+                  Post
+                </Button>
+              </div>
             </div>
           </div>
         </div>

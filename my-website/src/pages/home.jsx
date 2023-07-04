@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Card } from "@mui/material";
 import axios from "axios";
+import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 
 export default function Home() {
   const [images, setImages] = useState(null);
 
   return (
     <>
-      <div>
+      <div className="">
         <div className="flex w-3/5 font-serif ml-10 mt-10 text-3xl">
           <div>
             Hello, welcome to the beautiful website made by, and for, Michael
@@ -16,10 +17,45 @@ export default function Home() {
             site using the "Go To" menu at the top right, enjoy!
           </div>
         </div>
-        <div className=" w-2/5 ml-96 ">
+        <div
+          className="relative -top-40 -left-10 w-48 h-48 bg-yellow-100 rounded-full transform rotate-45"
+          style={{
+            boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+            zIndex: "-1",
+          }}
+        />
+        {/* <div className="flex ml-4">
+          Scroll photos <ArrowRightAltIcon />
+        </div> */}
+        <div className=" h-screen flex overflow-scroll">
           <img
+            src="/src/assets/images/tsa coleman memorial @saucewithspoons-30.JPG"
+            className=" rounded-full ml-4 h-1/3 "
+            alt="image"
+          />
+          {/* <img
             src="/src/assets/images/headshot 4.jpeg"
-            className=" rounded-full"
+            className=" rounded-full -ml-10 h-1/3"
+            alt="image"
+          /> */}
+          <img
+            src="/src/assets/images/promo3.JPEG"
+            className=" rounded-full -ml-10 h-1/3"
+            alt="image"
+          />
+          <img
+            src="/src/assets/images/mgandiwedding.JPG"
+            className=" rounded-full -ml-10 h-1/3"
+            alt="image"
+          />
+          <img
+            src="/src/assets/images/tsapromomilestone1.jpg"
+            className=" rounded-full -ml-10 h-1/3"
+            alt="image"
+          />
+          <img
+            src="/src/assets/images/mgandi.jpg"
+            className=" rounded-full -ml-10 h-1/3"
             alt="image"
           />
         </div>

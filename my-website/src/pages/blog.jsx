@@ -7,11 +7,13 @@ import CardContent from "@mui/material/CardContent";
 import axios from "axios";
 import moment from "moment";
 import { useNavigate } from "react-router-dom";
+import Alert from "@mui/material/Alert";
 
 export default function Blog() {
   const [posts, setPosts] = useState([]);
   const [post, setPost] = useState({ body: "" });
-  const [author, setAuthor] = useState([]);
+  const [author, setAuthor] = useState({ author: "" });
+  const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     axios
@@ -30,8 +32,13 @@ export default function Blog() {
   }, []);
 
   function handlePost() {
+    const postData = {
+      author: author.author,
+      body: post.body,
+    };
+
     axios
-      .post("http://127.0.0.1:8000/blog-post", post, author, {
+      .post("http://127.0.0.1:8000/blog-post", postData, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -40,9 +47,13 @@ export default function Blog() {
         console.log(response);
         setPosts([...posts, response.data]);
         setPost({ body: "" });
+        setAuthor({ author: "" });
       })
       .catch((error) => {
         console.error(error);
+        setErrorMessage(
+          "Please fill our both of the text fields to post. Thanks!"
+        );
       });
   }
 
@@ -66,7 +77,7 @@ export default function Blog() {
             {posts.map((p, index) => (
               <Card
                 key={index}
-                className="my-2 w-4/6 shadow-md shadow-black"
+                className="my-2 w-4/6 shadow-md shadow-black font-serif"
                 variant="outlined"
               >
                 <CardContent>
@@ -76,6 +87,10 @@ export default function Blog() {
                     {moment(p.time_created, "HH:mm").format("h:mm A")}{" "}
                   </div>
                   <div>{p.body}</div>
+                  <div className=" text-sm flex justify-end -mb-4">
+                    {" "}
+                    - {p.author}
+                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -93,10 +108,17 @@ export default function Blog() {
                   id=""
                   variant="standard"
                   label="Author"
-                  value={author.body}
-                  onChange={(e) => setPost({ ...author, body: e.target.value })}
+                  value={author.author}
+                  onChange={(e) =>
+                    setAuthor({ ...author, author: e.target.value })
+                  }
                 ></TextField>
               </div>
+              {errorMessage && (
+                <Alert className="my-2" severity="error">
+                  {errorMessage}
+                </Alert>
+              )}
               <div>
                 <Button onClick={handlePost} variant="text">
                   Post

@@ -52,7 +52,16 @@ export default function Blog() {
     return (
       <>
         <div className=" my-8">
-          <div className=" text-center text-6xl font-serif">Blog</div>
+          <div>
+            <div className=" text-center text-6xl font-serif">
+              Visitors Blog
+            </div>
+            <div className="flex flex-col m-auto mt-10 text-center text-2xl font-serif w-4/12">
+              Feel free to leave me a note! I'd love to hear constructive
+              feedback, ideas for the site, or even just happy thoughts! Thank
+              you for your time :)
+            </div>
+          </div>
           <div className="flex flex-col text-center my-2 justify-center items-center h-screen">
             {posts.map((p, index) => (
               <Card
@@ -70,7 +79,7 @@ export default function Blog() {
                 </CardContent>
               </Card>
             ))}
-            <div className="mt-20 w-8/12">
+            <div className="mt-4 w-8/12">
               <TextField
                 id=""
                 multiline

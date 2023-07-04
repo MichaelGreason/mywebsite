@@ -48,6 +48,7 @@ export default function Blog() {
         setPosts([...posts, response.data]);
         setPost({ body: "" });
         setAuthor({ author: "" });
+        setErrorMessage("");
       })
       .catch((error) => {
         console.error(error);
@@ -56,14 +57,21 @@ export default function Blog() {
         );
       });
   }
+  function handleKeyDown(event) {
+    if (event.key === "Enter" && !event.shiftKey) {
+      handlePost();
+    }
+  }
 
   console.log(post);
 
   if (posts) {
+    const reversedPosts = [...posts].reverse();
+
     return (
       <>
         <div className=" my-8">
-          <div>
+          <div className="my-2">
             <div className=" text-center text-6xl font-serif">
               Visitors Blog
             </div>
@@ -73,27 +81,7 @@ export default function Blog() {
               you for your time :)
             </div>
           </div>
-          <div className="flex flex-col text-center my-2 justify-center items-center h-screen">
-            {posts.map((p, index) => (
-              <Card
-                key={index}
-                className="my-2 w-4/6 shadow-md shadow-black font-serif"
-                variant="outlined"
-              >
-                <CardContent>
-                  <div className=" text-sm">
-                    {moment(p.created_at).format("MMMM Do, YYYY")}{" "}
-                    <span> - </span>
-                    {moment(p.time_created, "HH:mm").format("h:mm A")}{" "}
-                  </div>
-                  <div>{p.body}</div>
-                  <div className=" text-sm flex justify-end -mb-4">
-                    {" "}
-                    - {p.author}
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="flex flex-col text-center my-2 justify-center items-center">
             <div className="mt-4 w-8/12">
               <TextField
                 id=""
@@ -101,6 +89,7 @@ export default function Blog() {
                 rows={8}
                 className="w-4/6"
                 value={post.body}
+                onKeyDown={handleKeyDown}
                 onChange={(e) => setPost({ ...post, body: e.target.value })}
               ></TextField>
               <div>
@@ -109,6 +98,7 @@ export default function Blog() {
                   variant="standard"
                   label="Author"
                   value={author.author}
+                  onKeyDown={handleKeyDown}
                   onChange={(e) =>
                     setAuthor({ ...author, author: e.target.value })
                   }
@@ -124,6 +114,28 @@ export default function Blog() {
                   Post
                 </Button>
               </div>
+            </div>
+            <div className="flex flex-col items-center">
+              {reversedPosts.map((p, index) => (
+                <Card
+                  key={index}
+                  className="my-2 w-4/6 shadow-md shadow-black font-serif"
+                  variant="outlined"
+                >
+                  <CardContent>
+                    <div className=" text-sm">
+                      {moment(p.created_at).format("MMMM Do, YYYY")}{" "}
+                      <span> - </span>
+                      {moment(p.time_created, "HH:mm").format("h:mm A")}{" "}
+                    </div>
+                    <div>{p.body}</div>
+                    <div className=" text-sm flex justify-end -mb-4">
+                      {" "}
+                      - {p.author}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </div>

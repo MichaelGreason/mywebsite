@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 export default function Blog() {
   const [posts, setPosts] = useState([]);
   const [post, setPost] = useState({ body: "" });
-  const navigate = useNavigate();
+  const [author, setAuthor] = useState([]);
 
   useEffect(() => {
     axios
@@ -31,7 +31,7 @@ export default function Blog() {
 
   function handlePost() {
     axios
-      .post("http://127.0.0.1:8000/blog-post", post, {
+      .post("http://127.0.0.1:8000/blog-post", post, author, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -88,6 +88,15 @@ export default function Blog() {
                 value={post.body}
                 onChange={(e) => setPost({ ...post, body: e.target.value })}
               ></TextField>
+              <div>
+                <TextField
+                  id=""
+                  variant="standard"
+                  label="Author"
+                  value={author.body}
+                  onChange={(e) => setPost({ ...author, body: e.target.value })}
+                ></TextField>
+              </div>
               <div>
                 <Button onClick={handlePost} variant="text">
                   Post

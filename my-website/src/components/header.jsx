@@ -28,6 +28,16 @@ export default function Header() {
     setAnchor(null);
   }
 
+  function goResume() {
+    navigate("/resume");
+    setAnchor(null);
+  }
+
+  function goProjects() {
+    navigate("/projects");
+    setAnchor(null);
+  }
+
   return (
     <>
       <AppBar position="static" className=" h-10">
@@ -49,9 +59,12 @@ export default function Header() {
             <MenuItem disableRipple onClick={goBlog}>
               Blog
             </MenuItem>
-            <MenuItem disableRipple>Projects</MenuItem>
-            <MenuItem disableRipple>Music</MenuItem>
-            <MenuItem disableRipple>Resume</MenuItem>
+            <MenuItem disableRipple onClick={goProjects}>
+              Projects
+            </MenuItem>
+            <MenuItem disableRipple onClick={goResume}>
+              Resume
+            </MenuItem>
             <MenuItem disableRipple>Contact</MenuItem>
           </Menu>
         </div>

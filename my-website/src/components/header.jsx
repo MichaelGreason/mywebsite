@@ -38,6 +38,11 @@ export default function Header() {
     setAnchor(null);
   }
 
+  function goContact() {
+    navigate("/contact");
+    setAnchor(null);
+  }
+
   return (
     <>
       <AppBar position="static" className=" h-10">
@@ -65,7 +70,9 @@ export default function Header() {
             <MenuItem disableRipple onClick={goResume}>
               Resume
             </MenuItem>
-            <MenuItem disableRipple>Contact</MenuItem>
+            <MenuItem disableRipple onClick={goContact}>
+              Contact
+            </MenuItem>
           </Menu>
         </div>
       </AppBar>

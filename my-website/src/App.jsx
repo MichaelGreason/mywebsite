@@ -12,13 +12,15 @@ function App() {
   return (
     <>
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/resume" element={<Resume />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      <div style={{ width: "75rem" }}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/resume" element={<Resume />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
     </>
   );
 }

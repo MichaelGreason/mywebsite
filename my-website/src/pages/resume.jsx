@@ -7,7 +7,7 @@ export default function Resume() {
         <iframe
           src="/src/assets/images/Michael Greason Resume 2023 v2.pdf"
           title="resume"
-          className=" h-screen w-screen"
+          className=" h-screen  w-full"
         ></iframe>
       </div>
     </>

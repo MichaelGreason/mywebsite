@@ -18,7 +18,7 @@ export default function Home() {
           </div>
         </div>
         <div
-          className="relative -top-40 -left-10 w-48 h-48 bg-yellow-100 rounded-full transform rotate-45 overflow-hidden"
+          className="relative -top-40 w-48 h-48 bg-yellow-100 rounded-full transform rotate-45 overflow-hidden"
           style={{
             boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
             zIndex: "-1",

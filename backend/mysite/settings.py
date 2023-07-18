@@ -17,6 +17,13 @@ import environ
 BASE_DIR = Path(__file__).resolve().parent.parent
 environ.Env.read_env()
 
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False),
+    USE_S3=(bool, False),
+    RENDER=(bool, False)
+)
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -43,6 +50,7 @@ INSTALLED_APPS = [
     'api.apps.ApiConfig',
     'rest_framework',
     'corsheaders',
+    'mysite'
 ]
 
 MIDDLEWARE = [

@@ -9,6 +9,10 @@ psycopg2-binary = "*"
 django-environ = "*"
 djangorestframework = "*"
 django-cors-headers = "*"
+pillow = "*"
+boto3 = "*"
+gunicorn = "*"
+whitenoise = "*"
 
 [dev-packages]
 

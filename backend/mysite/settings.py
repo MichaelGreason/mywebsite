@@ -96,6 +96,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {"default": env.db()}
 
+AUTH_USER_MODEL = 'api.CustomUser'
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 

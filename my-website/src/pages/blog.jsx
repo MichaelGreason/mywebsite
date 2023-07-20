@@ -17,7 +17,7 @@ export default function Blog() {
 
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/blog-post", {
+      .get("https://mgreason-website.onrender.com/blogpost", {
         headers: {
           "Content-Type": "application/json",
         },
@@ -38,7 +38,7 @@ export default function Blog() {
     };
 
     axios
-      .post("http://127.0.0.1:8000/blog-post", postData, {
+      .post("https://mgreason-website.onrender.com/blogpost", postData, {
         headers: {
           "Content-Type": "application/json",
         },

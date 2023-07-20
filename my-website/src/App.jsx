@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <Header />
-      <div style={{ width: "75rem" }}>
+      <div style={{ width: "" }}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/blog" element={<Blog />} />

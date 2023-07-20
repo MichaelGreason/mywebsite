@@ -53,7 +53,7 @@ export default function Blog() {
       .catch((error) => {
         console.error(error);
         setErrorMessage(
-          "Please fill our both of the text fields to post. Thanks!"
+          "Please fill out both of the text fields to post. Thanks!"
         );
       });
   }

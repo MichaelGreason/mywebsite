@@ -164,6 +164,8 @@ if env("RENDER"):
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',
+    'https://mgreason-website.onrender.com',
+    'https://michael-greason.netlify.app',
 ]
 
 AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')

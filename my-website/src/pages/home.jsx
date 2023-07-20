@@ -29,7 +29,7 @@ export default function Home() {
         </div> */}
         <div className=" h-screen flex overflow-scroll">
           <img
-            src="/src/assets/images/tsa coleman memorial @saucewithspoons-30.JPG"
+            src="https://michael-greasons-1st-bucket.s3.us-east-2.amazonaws.com/my-website-assets/tsa+coleman+memorial+%40saucewithspoons-30.JPG"
             className=" rounded-full ml-4 h-1/3 "
             alt="image"
           />
@@ -43,21 +43,21 @@ export default function Home() {
             className=" rounded-full -ml-10 h-1/3"
             alt="image"
           />
-          {/* <img
+          <img
             src="https://michael-greasons-1st-bucket.s3.us-east-2.amazonaws.com/my-website-assets/mgandiwedding.JPG"
             className=" rounded-full -ml-10 h-1/3"
             alt="image"
           />
           <img
-            src="/src/assets/images/tsapromomilestone1.jpg"
+            src="https://michael-greasons-1st-bucket.s3.us-east-2.amazonaws.com/my-website-assets/tsapromomilestone1.jpg"
             className=" rounded-full -ml-10 h-1/3"
             alt="image"
           />
           <img
-            src="/src/assets/images/mgandi.jpg"
+            src="https://michael-greasons-1st-bucket.s3.us-east-2.amazonaws.com/my-website-assets/mgandi.jpg"
             className=" rounded-full -ml-10 h-1/3"
             alt="image"
-          /> */}
+          />
         </div>
       </div>
     </>

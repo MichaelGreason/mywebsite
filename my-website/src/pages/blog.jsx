@@ -17,7 +17,7 @@ export default function Blog() {
 
   useEffect(() => {
     axios
-      .get("https://mgreason-website.onrender.com/blogpost", {
+      .get("https://mgreason-website.onrender.com/blog-post", {
         headers: {
           "Content-Type": "application/json",
         },
@@ -38,7 +38,7 @@ export default function Blog() {
     };
 
     axios
-      .post("https://mgreason-website.onrender.com/blogpost", postData, {
+      .post("https://mgreason-website.onrender.com/blog-post", postData, {
         headers: {
           "Content-Type": "application/json",
         },

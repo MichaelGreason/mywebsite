@@ -75,14 +75,14 @@ export default function Blog() {
             <div className=" text-center text-6xl font-serif">
               Visitors Blog
             </div>
-            <div className="flex flex-col m-auto mt-10 text-center text-2xl font-serif w-4/12">
+            <div className="flex flex-col m-auto mt-10 text-center text-2xl font-serif w-1/2">
               Feel free to leave me a note! I'd love to hear constructive
               feedback, ideas for the site, or even just happy thoughts! Thank
               you for your time :)
             </div>
           </div>
-          <div className="flex flex-col text-center my-2 justify-center items-center">
-            <div className="mt-4 w-8/12">
+          <div className="flex flex-col text-center my-2 justify-center items-center ">
+            <div className="mt-4 w-1/2">
               <TextField
                 id=""
                 multiline

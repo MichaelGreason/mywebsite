@@ -39,12 +39,12 @@ export default function Home() {
             alt="image"
           /> */}
           <img
-            src="/src/assets/images/promo3.JPEG"
+            src="https://michael-greasons-1st-bucket.s3.us-east-2.amazonaws.com/my-website-assets/promo3.JPEG"
             className=" rounded-full -ml-10 h-1/3"
             alt="image"
           />
-          <img
-            src="/src/assets/images/mgandiwedding.JPG"
+          {/* <img
+            src="https://michael-greasons-1st-bucket.s3.us-east-2.amazonaws.com/my-website-assets/mgandiwedding.JPG"
             className=" rounded-full -ml-10 h-1/3"
             alt="image"
           />
@@ -57,7 +57,7 @@ export default function Home() {
             src="/src/assets/images/mgandi.jpg"
             className=" rounded-full -ml-10 h-1/3"
             alt="image"
-          />
+          /> */}
         </div>
       </div>
     </>

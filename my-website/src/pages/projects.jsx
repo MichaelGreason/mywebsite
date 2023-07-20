@@ -24,9 +24,9 @@ export default function Projects() {
           <div className=" font-serif text-2xl">Bash</div>
           <CardMedia
             component="img"
-            alt="green iguana"
+            alt="bash"
             sx={{ objectFit: "contain", height: 500 }}
-            image="/src/assets/images/bashimage.png"
+            image="https://michael-greasons-1st-bucket.s3.us-east-2.amazonaws.com/my-website-assets/bashimage.png"
           />
           <CardContent>
             <p>

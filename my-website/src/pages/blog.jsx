@@ -119,7 +119,7 @@ export default function Blog() {
               {reversedPosts.map((p, index) => (
                 <Card
                   key={index}
-                  className="my-2 w-4/6 shadow-md shadow-black font-serif"
+                  className="my-2 shadow-md shadow-black font-serif"
                   variant="outlined"
                 >
                   <CardContent>

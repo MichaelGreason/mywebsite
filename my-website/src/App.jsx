@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./styles/App.css";
 import Blog from "./pages/blog";
 import { Routes, Route } from "react-router-dom";
@@ -9,6 +9,9 @@ import Projects from "./pages/projects";
 import Contact from "./pages/contact";
 
 function App() {
+  useEffect(() => {
+    document.title = "Michael Greason's Website";
+  }, []);
   return (
     <>
       <Header />
